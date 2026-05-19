@@ -28,7 +28,9 @@ const ProductDetails = () => {
   if (loading) return <div className="min-h-[60vh] flex items-center justify-center"><LoadingSpinner /></div>;
   if (error || !product) return <div className="min-h-[60vh] flex items-center justify-center flex-col gap-4 text-center px-4"><p className="text-xl text-red-500 font-medium">{error}</p><Link to="/products" className="btn-primary">Back to Products</Link></div>;
 
-  const discountPercentage = Math.round(((product.marketPrice - product.ourPrice) / product.marketPrice) * 100);
+  const marketPrice = Number(product.marketPrice) || 0;
+  const ourPrice = Number(product.ourPrice) || 0;
+  const discountPercentage = marketPrice > 0 ? Math.round(((marketPrice - ourPrice) / marketPrice) * 100) : 0;
 
   const handleWhatsAppOrder = () => {
     const phoneNumber = "916351506536"; // Using the primary WhatsApp number
@@ -44,7 +46,7 @@ const ProductDetails = () => {
         <Link to="/products" className="inline-flex items-center gap-2 text-gray-500 hover:text-primary-600 mb-6 transition-colors">
           <ArrowLeft className="h-4 w-4" /> Back to Products
         </Link>
-
+ 
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
             
@@ -67,11 +69,11 @@ const ProductDetails = () => {
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{product.name}</h1>
               
               <div className="flex flex-wrap items-baseline gap-4 mb-8">
-                <span className="text-4xl font-extrabold text-gray-900">₹{product.ourPrice}</span>
-                <span className="text-xl text-gray-500">₹{product.marketPrice}</span>
+                <span className="text-4xl font-extrabold text-primary-600">₹{product.ourPrice}</span>
+                <span className="text-xl text-gray-400 line-through">₹{product.marketPrice}</span>
                 {discountPercentage > 0 && (
                   <span className="text-sm font-medium text-red-600 bg-red-50 px-2 py-1 rounded">
-                    You save ₹{(product.marketPrice - product.ourPrice).toFixed(2)}
+                    You save ₹{(marketPrice - ourPrice).toFixed(0)}
                   </span>
                 )}
               </div>
