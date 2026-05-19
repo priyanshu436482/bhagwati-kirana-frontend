@@ -106,7 +106,7 @@ const ProductManagement = () => {
                     <tr className="bg-gray-50 text-gray-500 text-sm uppercase tracking-wider">
                       <th className="px-6 py-4 font-medium border-b border-gray-100">Image</th>
                       <th className="px-6 py-4 font-medium border-b border-gray-100">Name</th>
-                      <th className="px-6 py-4 font-medium border-b border-gray-100">આપણી ભાવ</th>
+                      <th className="px-6 py-4 font-medium border-b border-gray-100">આપણો ભાવ</th>
                       <th className="px-6 py-4 font-medium border-b border-gray-100">બજાર ભાવ</th>
                       <th className="px-6 py-4 font-medium border-b border-gray-100 text-right">Actions</th>
                     </tr>
@@ -161,7 +161,7 @@ const ProductManagement = () => {
                       <div className="min-w-0">
                         <p className="font-semibold text-gray-900 truncate">{product.name}</p>
                         <div className="mt-1 flex flex-col gap-0.5 text-xs text-gray-500">
-                          <span className="font-bold text-primary-600 text-sm">આપણી ભાવ: ₹{product.ourPrice}</span>
+                          <span className="font-bold text-primary-600 text-sm">આપણો ભાવ: ₹{product.ourPrice}</span>
                           <span>બજાર ભાવ: ₹{product.marketPrice}</span>
                         </div>
                       </div>

@@ -73,7 +73,7 @@ const AdminDashboard = () => {
                   <thead>
                     <tr className="bg-gray-50 text-gray-500 text-sm uppercase tracking-wider">
                       <th className="px-6 py-4 font-medium border-b border-gray-100">Product</th>
-                      <th className="px-6 py-4 font-medium border-b border-gray-100">આપણી ભાવ</th>
+                      <th className="px-6 py-4 font-medium border-b border-gray-100">આપણો ભાવ</th>
                       <th className="px-6 py-4 font-medium border-b border-gray-100">બજાર ભાવ</th>
                       <th className="px-6 py-4 font-medium border-b border-gray-100">Discount</th>
                     </tr>

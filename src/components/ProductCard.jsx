@@ -39,7 +39,7 @@ const ProductCard = ({ product }) => {
               <span className="text-xs text-gray-400 line-through">₹{product.marketPrice}</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-sm font-bold text-gray-900">આપણી ભાવ:</span>
+              <span className="text-sm font-bold text-gray-900">આપણો ભાવ:</span>
               <span className="text-xl font-extrabold text-primary-600">₹{product.ourPrice}</span>
             </div>
             {discountPercentage > 0 && (
