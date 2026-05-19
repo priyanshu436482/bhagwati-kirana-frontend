@@ -61,7 +61,8 @@ const ProductManagement = () => {
       fetchProducts();
     } catch (err) {
       console.error("Error saving product:", err);
-      throw new Error(err.response?.data?.message || "Failed to save product.");
+      const detailedError = err.response?.data?.error ? `: ${err.response.data.error}` : '';
+      throw new Error((err.response?.data?.message || "Failed to save product") + detailedError);
     } finally {
       setIsSubmitting(false);
     }
