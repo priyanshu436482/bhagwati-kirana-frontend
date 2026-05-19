@@ -68,12 +68,12 @@ const ProductManagement = () => {
   };
 
   return (
-    <div className="flex bg-gray-50 min-h-screen">
+    <div className="flex bg-gray-50 min-h-screen w-full overflow-hidden">
       <AdminSidebar />
       
-      <main className="flex-1 p-8 overflow-y-auto">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Manage Products</h1>
+      <main className="flex-1 p-4 md:p-8 min-w-0 overflow-y-auto overflow-x-hidden">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 md:mb-8 gap-4">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Manage Products</h1>
           {!isFormOpen && (
             <button onClick={handleAddNew} className="btn-primary flex items-center gap-2">
               <Plus className="h-5 w-5" /> Add New Product

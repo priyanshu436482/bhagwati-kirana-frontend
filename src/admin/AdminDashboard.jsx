@@ -29,11 +29,11 @@ const AdminDashboard = () => {
   }, []);
 
   return (
-    <div className="flex bg-gray-50 min-h-screen">
+    <div className="flex bg-gray-50 min-h-screen w-full overflow-hidden">
       <AdminSidebar />
       
-      <main className="flex-1 p-8 overflow-y-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">Dashboard Overview</h1>
+      <main className="flex-1 p-4 md:p-8 min-w-0 overflow-y-auto overflow-x-hidden">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">Dashboard Overview</h1>
         
         {loading ? (
           <LoadingSpinner />
