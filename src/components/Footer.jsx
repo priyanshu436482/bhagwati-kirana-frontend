@@ -24,7 +24,7 @@ const Footer = () => {
                 <span className="space-y-1">
                   <span className="grid grid-cols-[130px_1fr] gap-4">
                     <span>+91 63515 06536</span>
-                    {/* <span>PRAVINBHHAI PATEL</span> */}
+                    <span>PRAVINBHHAI PATEL</span>
                   </span>
                   <span className="grid grid-cols-[130px_1fr] gap-4">
                     <span>+91 90161 04946</span>
