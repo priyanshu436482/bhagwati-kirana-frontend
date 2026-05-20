@@ -21,7 +21,16 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span>+91 63515 06536 <br/> +91 90161 04946</span>
+                <span className="space-y-1">
+                  <span className="grid grid-cols-[130px_1fr] gap-4">
+                    <span>+91 63515 06536</span>
+                    {/* <span>PRAVINBHHAI PATEL</span> */}
+                  </span>
+                  <span className="grid grid-cols-[130px_1fr] gap-4">
+                    <span>+91 90161 04946</span>
+                    <span>SACHIN PATEL</span>
+                  </span>
+                </span>
               </li>
             </ul>
           </div>
