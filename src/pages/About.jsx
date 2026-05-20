@@ -16,28 +16,6 @@ const About = () => {
 
       {/* Content Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
-            <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
-              <p>
-                Established with a vision to revolutionize the local grocery shopping experience, Bhagvati Kirana has been serving the community with dedication and trust. We understand that your family deserves the best, which is why we meticulously source our products from trusted suppliers.
-              </p>
-              <p>
-                What started as a small neighborhood store has now embraced technology to make your shopping easier. Through our digital storefront and WhatsApp ordering system, we bridge the gap between traditional reliability and modern convenience.
-              </p>
-            </div>
-          </div>
-          <div className="bg-gray-100 rounded-3xl h-[400px] flex items-center justify-center overflow-hidden relative">
-            {/* Abstract placeholder for store image */}
-            <div className="absolute inset-0 bg-primary-100 opacity-50 mix-blend-multiply"></div>
-            <div className="text-center z-10 p-8">
-              <h3 className="text-2xl font-bold text-primary-800 mb-2">Quality First</h3>
-              <p className="text-primary-600">Always fresh, always pure.</p>
-            </div>
-          </div>
-        </div>
-
         {/* Values */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900">Our Core Values</h2>
