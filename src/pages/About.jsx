@@ -9,7 +9,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">About Bhagvati Kirana</h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Your trusted local provision store dedicated to bringing you the best quality groceries and daily essentials at unbeatable market prices.
+            Your trusted local provision store dedicated to bringing you the best quality provision items and daily essentials at unbeatable market prices.
           </p>
         </div>
       </div>

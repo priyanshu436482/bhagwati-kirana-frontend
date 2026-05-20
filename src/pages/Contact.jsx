@@ -35,7 +35,7 @@ const Contact = () => {
                   <MessageCircle className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900">WhatsApp Orders</h3>
+                  <h3 className="text-lg font-bold text-gray-900">WhatsApp number</h3>
                   <div className="mt-2 space-y-3">
                     <div>
                       <p className="text-gray-600">+91 63515 06536</p>

@@ -10,7 +10,6 @@ const Home = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const [showAll, setShowAll] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -55,7 +54,7 @@ const Home = () => {
             <SearchBar 
               searchTerm={searchTerm} 
               setSearchTerm={setSearchTerm} 
-              placeholder="Search for groceries, household items..." 
+              placeholder="Search for provision items, household items..." 
             />
             <button type="submit" className="hidden">Search</button>
           </form>
@@ -76,14 +75,6 @@ const Home = () => {
             <h2 className="text-3xl font-bold text-gray-900">Latest Additions</h2>
             <p className="text-gray-500 mt-2">Discover our newest high-quality products</p>
           </div>
-          {products.length > 8 && (
-            <button 
-              onClick={() => setShowAll(!showAll)} 
-              className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1 hidden sm:flex align-middle"
-            >
-              {showAll ? 'Show Less' : 'View All'} <ArrowRight className={`h-4 w-4 transform transition-transform duration-300 ${showAll ? 'rotate-90' : ''}`} />
-            </button>
-          )}
         </div>
 
         {loading ? (
@@ -96,16 +87,16 @@ const Home = () => {
               ))}
             </div>
             
-            {products.length > 8 && (
-              <div className="mt-10 text-center sm:hidden">
-                <button 
-                  onClick={() => setShowAll(!showAll)} 
-                  className="btn-primary inline-flex items-center gap-2"
-                >
-                  {showAll ? 'Show Less' : 'View All Products'} <ArrowRight className={`h-4 w-4 transform transition-transform duration-300 ${showAll ? 'rotate-90' : ''}`} />
-                </button>
-              </div>
-            )}
+            <div className="mt-12 text-center">
+              <Link
+                to="/products"
+                className="inline-flex items-center gap-3 bg-primary-600 hover:bg-primary-700 active:scale-95 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-base group"
+              >
+                <ShoppingBag className="h-5 w-5" />
+                See More Products
+                <ArrowRight className="h-5 w-5 transform transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
           </>
         )}
       </section>

@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <h3 className="text-white text-lg font-bold mb-4">Bhagvati Kirana</h3>
             <p className="text-sm">
-              Your one-stop shop for daily household needs and groceries. We deliver quality at the best market prices.
+              Your one-stop shop for daily household needs and provision items. We deliver quality at the best market prices.
             </p>
           </div>
           <div>
