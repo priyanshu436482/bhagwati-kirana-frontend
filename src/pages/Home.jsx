@@ -33,7 +33,7 @@ const Home = () => {
     }
   };
 
-  const displayedProducts = showAll ? products : products.slice(0, 8);
+  const displayedProducts = products.slice(0, 8);
 
   return (
     <div className="bg-gray-50 min-h-screen">
