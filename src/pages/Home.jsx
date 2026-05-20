@@ -10,13 +10,14 @@ const Home = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
+  const [showAll, setShowAll] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const res = await api.get('/products');
-        setProducts(res.data.slice(0, 8)); // Get only latest 8 products
+        setProducts(res.data); // Store all products
       } catch (err) {
         console.error("Error fetching products:", err);
       } finally {
@@ -32,6 +33,8 @@ const Home = () => {
       navigate(`/products?search=${encodeURIComponent(searchTerm)}`);
     }
   };
+
+  const displayedProducts = showAll ? products : products.slice(0, 8);
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -73,9 +76,14 @@ const Home = () => {
             <h2 className="text-3xl font-bold text-gray-900">Latest Additions</h2>
             <p className="text-gray-500 mt-2">Discover our newest high-quality products</p>
           </div>
-          <Link to="/products" className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1 hidden sm:flex">
-            View All <ArrowRight className="h-4 w-4" />
-          </Link>
+          {products.length > 8 && (
+            <button 
+              onClick={() => setShowAll(!showAll)} 
+              className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1 hidden sm:flex align-middle"
+            >
+              {showAll ? 'Show Less' : 'View All'} <ArrowRight className={`h-4 w-4 transform transition-transform duration-300 ${showAll ? 'rotate-90' : ''}`} />
+            </button>
+          )}
         </div>
 
         {loading ? (
@@ -83,16 +91,21 @@ const Home = () => {
         ) : (
           <>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-              {products.map(product => (
+              {displayedProducts.map(product => (
                 <ProductCard key={product._id} product={product} />
               ))}
             </div>
             
-            <div className="mt-10 text-center sm:hidden">
-              <Link to="/products" className="btn-primary inline-flex items-center gap-2">
-                View All Products <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
+            {products.length > 8 && (
+              <div className="mt-10 text-center sm:hidden">
+                <button 
+                  onClick={() => setShowAll(!showAll)} 
+                  className="btn-primary inline-flex items-center gap-2"
+                >
+                  {showAll ? 'Show Less' : 'View All Products'} <ArrowRight className={`h-4 w-4 transform transition-transform duration-300 ${showAll ? 'rotate-90' : ''}`} />
+                </button>
+              </div>
+            )}
           </>
         )}
       </section>
