@@ -10,15 +10,32 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [searchParams] = useSearchParams();
-  const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const searchTerm = searchParams.get('search') || '';
+
+  const setSearchTerm = (value) => {
+    setSearchParams(
+      (prev) => {
+        if (value) {
+          prev.set('search', value);
+        } else {
+          prev.delete('search');
+        }
+        return prev;
+      },
+      { replace: true }
+    );
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const res = await api.get('/products');
-        setProducts(res.data);
-        setFilteredProducts(res.data);
+        if (Array.isArray(res.data)) {
+          setProducts(res.data);
+          setFilteredProducts(res.data);
+        }
       } catch (err) {
         console.error("Error fetching products:", err);
       } finally {

@@ -36,11 +36,11 @@ const ProductCard = ({ product }) => {
           <div className="flex flex-col gap-1 mb-2">
             <div className="flex items-center gap-2">
               <span className="text-[10px] sm:text-xs font-medium text-gray-400">બજાર ભાવ:</span>
-              <span className="text-xs text-gray-400 line-through">₹{product.marketPrice}</span>
+              <span className="text-xs text-gray-400 line-through">₹{marketPrice}</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs sm:text-sm font-bold text-gray-900">આપણો ભાવ:</span>
-              <span className="text-lg sm:text-xl font-extrabold text-primary-600">₹{product.ourPrice}</span>
+              <span className="text-lg sm:text-xl font-extrabold text-primary-600">₹{ourPrice}</span>
             </div>
             {discountPercentage > 0 && (
               <div className="text-[10px] sm:text-xs font-semibold text-red-500 bg-red-50 px-2 py-0.5 rounded w-max mt-1">
